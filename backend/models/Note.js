@@ -1,7 +1,7 @@
-import mongoose, { model } from 'mongoose';
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const userNotes = new Schema({
+const notesSchema = new Schema({
   title:{
     type:String,
     required: true
@@ -17,7 +17,11 @@ const userNotes = new Schema({
   date:{
     type:Date,
     default:Date.now
-  },  
+  },
+  user:{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:"user"
+  }  
 });
 
-model.exports = mongoose.model('notes',notesSchema);
+module.exports = mongoose.model('notes',notesSchema);
