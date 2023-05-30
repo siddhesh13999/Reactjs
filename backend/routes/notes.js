@@ -19,6 +19,9 @@ router.post(
     body("description", "Please enter longer valid description").isLength({
       min: 5,
     }),
+    body("tag", "Please enter longer valid tag").isLength({
+      min: 3,
+    }),
   ],
   async (req, res) => {
     try {

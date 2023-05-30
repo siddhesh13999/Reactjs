@@ -9,7 +9,8 @@ const About = () => {
   // },[])
   return (
     <div>
-        {console.log(a)}      
+        {/* {console.log(a)}       */}
+        <h1>this is about</h1>
     </div>
   )
 }
